@@ -20,10 +20,7 @@ jobs:
             git commit -m "Update from zip"
             git push
           fi
-      - name: Key
-        env:
-          K: ${{ secrets.KEYSTORE_BASE64 }}
-        run: if [ -n "$K" ]; then echo "$K" | base64 -d > app/avrora.jks; fi
+      - 
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       - uses: gradle/actions/setup-gradle@v4
